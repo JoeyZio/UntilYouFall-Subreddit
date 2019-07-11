@@ -59,9 +59,10 @@ gulp.task('sass', function() {
 gulp.task('watch', function() {
     gulp.watch(sassDir, ['sass']);
 });
-    gulp.task('watch-build', function() {
+
+gulp.task('watch-build', function() {
     gulp.watch(sassDir, ['sass', 'build']);
 });
 
 
-gulp.task('default', ['build']);
+gulp.task('default', gulp.series('build'));
