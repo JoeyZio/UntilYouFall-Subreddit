@@ -50,9 +50,6 @@
                     .separator {
                         background: rgba(60,60,60,1);
                     }
-                    .message-count {
-                        display: none;
-                    }
                 }
 
                 $dropdown-items: "a#modmail", "a#mail", "ul", ".user", "form.logout";

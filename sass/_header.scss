@@ -20,10 +20,10 @@
             left: $side-margin-mobile + $tab-bar-offset-mobile;
         }
 
-        background: rgba(50, 60, 70, 0.8);
+        background: rgba(24, 19, 28, .5);
         border-top-left-radius: 2px;
         border-top-right-radius: 2px;
-        text-align: center;
+        text-align: left;
 
         /* Need to push up redditname when no tabs */
         min-height: 48px;
@@ -38,22 +38,21 @@
 
 
         #header-img {
-
             visibility: visible;
             position: absolute;
-            left: -40px;
-            top: 60px - $header-height;
+            left: -1px;
+            top: -8px;
             width: 64px;
             height: 64px;
 
             @include sprite($icon-social-reddit);
-            margin-top: 10px;
             opacity: 0.8;
             transition: opacity 0.2s;
+            transform: scale(0.5);
 
-            @media (max-width: $mobile-breakpoint) {
-                left: 4px;
-            }
+            // @media (max-width: $mobile-breakpoint) {
+            //     left: 4px;
+            // }
 
             &:hover {
                 opacity: 1;
@@ -69,28 +68,23 @@
             left: 0px;
             width: 100%;
             color: white;
+            text-align: left;
 
             a {
-                color: white;
-                font-size: 50px;
-                font-family: $default-font-stack;
-                font-weight: 100;
-                letter-spacing: 14px;
-                font-variant: small-caps;
-                text-transform: lowercase;
-
-                &:hover {
-                    text-decoration: none;
-                }
-
-                &::before {
-                    content: '/r/';
-                }
+                /* Do not remove below comment: */
+                /* background-image: url(%%logo%%); */
+                background-image: url('http://i.imgur.com/ZoRkI3m.png');
+                color: transparent;
+                width: 512px;
+                height: 176px;
+                position: absolute;
+                margin-top: -125px;
             }
         }
     }
 
     #header-bottom-right {
+        cursor: pointer;
         position: absolute;
         top: 25px;
         bottom: initial;
@@ -112,6 +106,10 @@
 
         .message-count {
             background: rgba(255, 92, 92, 0.63);
+            margin-right: 19px;
+            border-radius: 0;
+            padding: 16px 10px;
+            font-size: 20px !important;
         }
 
         #userbarToggle {

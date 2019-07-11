@@ -15,16 +15,15 @@
 
     .linefield {
         margin: 15px auto;
-        @include well;
+        background: #2f2a2c !important;
 
         .title {
-            color: #222;
-            font-weight: 300;
+            color: $text-color;
+            font-weight: bold;
             text-transform: capitalize;
             font-size: 14px;
             margin-bottom: 8px;
             display: block;
-            border-bottom: 1px solid #CCC;
             padding-bottom: 4px;
         }
 

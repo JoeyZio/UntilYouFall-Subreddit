@@ -1,5 +1,10 @@
 /* VARIABLES */
 
+$online-text: ' Dueling the Unraveled';
+$subscribers-text: ' Runeknights';
+
+$text-color: #f3eee7;
+
 // A box that contains text
 $well-bg: #FAFAFA;
 $well-border-color: #BBB;
@@ -8,9 +13,9 @@ $well-padding: 12px;
 $well-radius: 0px;
 $paragraph-text-size: 12px;
 
-$default-font-stack: helvetica, verdana, arial, sans-serif;
+$default-font-stack: Verdana, sans-serif;
 
-$header-height: 210px;
+$header-height: 300px;
 
 // Space on the sides where the background is visible
 $side-margin: 35px;
@@ -34,17 +39,19 @@ $content-side-space: 0px;
 $panel-header-height: 65px;
 $panel-header-color: white;
 
-$side-bg: rgba(white, 0.8);
+$side-bg: #2f2a2c;
 
-// This color can be partially seen through the tile
-$background-accent: #474f52;
+$background-color: #18131c;
 
 $mobile-breakpoint: 1150px;
 
 
+$button-bg: linear-gradient(#7f5a7e,#5e3b5e);
+
 $blue: #3c5e6f;
 $red: #6f3c3c;
-$green: #3c6f43;
+$green: #52ffd5;
+$orange: #f6972a;
 $gray: #6e6e6e;
 
 
@@ -57,13 +64,13 @@ $gray: #6e6e6e;
     font-size: $paragraph-text-size;
 }
 @mixin button {
-    padding: 6px 16px;
+    background: $button-bg;
+    border: 2px solid $green;
     border-radius: 0px;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid #DDD;
+    color: #fff;
     outline: none;
+    padding: 6px 16px;
     box-sizing: content-box;
-    transition: background 0.2s;
     text-transform: uppercase;
 }
 @mixin spritesheet {
@@ -72,10 +79,6 @@ $gray: #6e6e6e;
     background-image: url('http://i.imgur.com/ZoRkI3m.png');
 }
 @mixin background-image {
-    /* background: url(%%background%%); */
-    background: url('http://i.imgur.com/VsrAZoQ.png');
-}
-@mixin tile-image {
-    /* background: url(%%tile%%); */
-    background: url('http://i.imgur.com/teQbNM5.png');
+    /* background: linear-gradient(transparent 50%, #18131c 95%), url(%%background%%); */
+    background: linear-gradient(transparent 50%, #18131c 95%), url('http://i.imgur.com/VsrAZoQ.png');
 }

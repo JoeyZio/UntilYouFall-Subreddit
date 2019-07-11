@@ -1,3 +1,7 @@
+.premium-banner-outer {
+    display: none;
+}
+
 .side {
     z-index: 1;
     min-width: 0px;
@@ -48,8 +52,7 @@
 
         #searchexpando {
             padding: $well-padding;
-            background: $well-bg;
-            border: 1px solid #DDD;
+            background: #3e3739;
             margin-bottom: 40px;
 
             p {
@@ -79,24 +82,11 @@
     }
 
     .linkinfo {
-        @include well;
         margin-top: 12px;
-        color: #444;
         text-align: center;
 
         .date {
-            padding-bottom: 3px;
-            margin-bottom: 5px;
-            border-bottom: 1px solid #CCC;
-
-            span {
-                font-size: 0px;
-
-                &::before {
-                    font-size: $paragraph-text-size;;
-                    content: 'Submitted on ';
-                }
-            }
+            display: none;
         }
 
         .score {
@@ -111,7 +101,13 @@
         }
 
         .shortlink > input[type='text'] {
+            background: #3e3739;
+            color: #f3eee7;
             border: $well-border;
+
+            &:hover {
+                border-color: $orange;
+            }
         }
     }
 
@@ -120,7 +116,7 @@
 
         a {
             font-weight: 100;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             color: white;
             padding: 8px 12px;
@@ -133,14 +129,15 @@
 
         /* Post Link Button */
         .morelink {
-            background: transparentize($blue, 0.2);
+            background: $button-bg;
             height: initial;
             height: auto;
             border: none;
-            transition: background 0.4s;
+            color: #fff;
+            border: 2px solid $green;
         }
         &:hover .morelink {
-            background: $blue;
+            border-color: $orange;
         }
 
         .nub {
@@ -166,21 +163,20 @@
             font-size: 24px;
             text-align: center;
             margin: 30px 0 12px;
-            padding-bottom: 2px;
-            border-bottom: $well-border;
             font-family: $default-font-stack;
 
             a {
-                color: #777;
-                text-decoration: none;
-                text-transform: uppercase;
-                font-weight: 100;
+                color: $green;
+                font-weight: bold;
                 letter-spacing: 3px;
 
                 &:hover {
                     color: black;
                 }
 
+                &:before {
+                    content: '/r/';
+                }
             }
         }
 
@@ -188,13 +184,12 @@
         .fancy-toggle-button {
             background: transparent;
             height: 25px;
-            margin: 12px 0;
+            margin: 12px 0 50px;
             display: block;
             text-align: center;
 
             a {
                 background-image: none;
-                transition: background 0.3s;
                 border-radius: 0px;
                 margin-right: 10px;
                 padding: 5px 24px;
@@ -207,20 +202,8 @@
                 }
             }
 
-            &.subscribe-button a {
-                background: rgba(134, 36, 53, 0.6);
-
-                &:hover {
-                    background: rgba(134, 36, 53, 0.8);
-                }
-            }
-
-            &.unsubscribe-button a {
-                background: rgba(38, 134, 36, 0.6);
-
-                &:hover {
-                    background: rgba(38, 134, 36, 0.8);
-                }
+            &.subscribe-button a, &.unsubscribe-button a {
+                @include button;
             }
         }
 
@@ -256,8 +239,21 @@
             align-items: center;
             text-transform: capitalize;
 
+            .word {
+                display: none;
+            }
+
             .number {
                 margin-right: 4px;
+
+                &:after {
+                    content: $online-text;
+                }
+            }
+
+            .word, .number:after {
+                cursor: unset;
+                text-transform: none;
             }
 
             &::before {
@@ -272,7 +268,6 @@
             background: none;
         }
         form.flairtoggle, .users-online {
-            color: #555;
             font-size: 11px;
         }
 
@@ -281,8 +276,7 @@
             display: table;
             margin: 0 auto;
             margin-top: 10px;
-            background: rgba(255,255,255,0.4);
-            border: 1px solid #CCC;
+            background: #3e3739;
             margin-bottom: 24px;
         }
 
@@ -291,16 +285,21 @@
             text-align: center;
             margin-bottom: 18px;
             float: right;
-            color: #777;
             font-size: 11px;
+
+            .word {
+                display: none;
+            }
+
+            .number:after {
+                content: $subscribers-text;
+            }
         }
 
         .leavemoderator,
         form.leavecontributor-button {
-            background: $well-bg;
             padding: $well-padding;
             font-size: 11px;
-            border: $well-border;
         }
         .leavemoderator {
             margin-top: 12px;
@@ -313,7 +312,6 @@
 
         .bottom {
             margin-top: 10px;
-            border-top: 1px solid $well-border-color;
         }
 
 
@@ -481,13 +479,11 @@
 
         .title {
             padding: 4px;
-            text-align: center;
-            border-bottom: 1px solid #AAA;
             margin-bottom: 20px;
-            color: #444;
+            color: $text-color;
 
             h1 {
-                color: #444;
+                color: $text-color;
             }
         }
         .content {
@@ -515,7 +511,7 @@
         }
         a.reddit-link-title {
             font-weight: 100;
-            color: #555;
+            color: #91bdbb;
             border-bottom: 1px solid #CCC;
             display: inline-block;
             padding-bottom: 3px;
@@ -602,4 +598,8 @@
         }
 
     }
+}
+
+.gadget .linkflairlabel {
+    display: none;
 }
