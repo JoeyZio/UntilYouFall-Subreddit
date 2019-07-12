@@ -72,6 +72,15 @@ $gray: #6e6e6e;
     padding: 6px 16px;
     box-sizing: content-box;
     text-transform: uppercase;
+    
+    &:hover {
+        border-color: $orange;
+        text-decoration: none;
+    }
+
+    a, a:hover {
+        text-decoration: none;
+    }
 }
 @mixin spritesheet {
     /* Do not remove below comment: */

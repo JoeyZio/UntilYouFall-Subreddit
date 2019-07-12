@@ -98,7 +98,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100% auto;
     font-family: $default-font-stack;
-    color: #444;
+    color: $text-color;
 
     &::before {
         content: "";
