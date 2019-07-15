@@ -82,6 +82,8 @@
     }
 
     .linkinfo {
+        background: #3e3739;
+        border: 0;
         margin-top: 12px;
         text-align: center;
 
@@ -105,7 +107,7 @@
             color: #f3eee7;
             border: $well-border;
 
-            &:hover {
+            &:focus, &:active {
                 border-color: $orange;
             }
         }
