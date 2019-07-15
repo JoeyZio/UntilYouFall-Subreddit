@@ -16,22 +16,23 @@ $comment-buttons-width: 600px;
 
     /* RES */
     .comment-visits-box {
-        border: $well-border;
+        border: 0;
         border-radius: 0px;
-        background: $well-bg;
+        background: #2f2a2c;
+        color: $text-color;
         padding: 10px 24px;
     }
 
     .panestack-title {
-        border-bottom: 1px solid #DDD;
+        border-bottom: 0;
+        color: $text-color;
         text-transform: capitalize;
-        text-align: center;
-        width: 75%;
-        margin: 0 auto;
+        text-align: left;
+        margin-bottom: 10px;
 
         .title {
             font-size: 18px;
-            font-weight: 100;
+            font-weight: 700;
         }
 
         #REScommentSubToggle {
@@ -49,9 +50,8 @@ $comment-buttons-width: 600px;
     }
 
     .menuarea {
-        margin: 12px 0 0 0;
         font-weight: 100;
-        text-align: center;
+        text-align: left;
         display: block;
         overflow: visible;
 
@@ -69,17 +69,12 @@ $comment-buttons-width: 600px;
             width: 100%;
         }
 
-
         .toggle .togglebutton,
-        #REScommentNavToggle [id^='nav']{
-            font-size: $paragraph-text-size;;
+        #REScommentNavToggle [id^='nav'] {
+            color: $text-color;
+            font-size: $paragraph-text-size;
             font-weight: normal;
             text-transform: capitalize;
-            transition: color 0.15s;
-
-            &:hover {
-                color: black;
-            }
         }
 
         form.toggle:first-child {
@@ -141,21 +136,12 @@ $comment-buttons-width: 600px;
     .usertext-edit {
         width: 100%;
         max-width: 500px;
-        margin: 20px auto 60px auto;
 
         /* Save and cancel buttons */
         .usertext-buttons button {
-            background: rgba(0,0,0,0.05);
             font-size: 11px;
             letter-spacing: 2px;
-            color: #777;
             margin-top: 0px;
-        }
-        .usertext-buttons button:hover {
-            background: rgba(0,0,0,0.15);
-        }
-        .usertext-buttons button:active {
-            background: rgba(0,0,0,0.25);
         }
     }
 
@@ -222,8 +208,8 @@ $comment-buttons-width: 600px;
 
             // To show voting arrows
             margin-left: 40px;
-            background: $well-bg;
-            border-left: 3px solid lighten($blue, 30%);
+            background: #2f2a2c;
+            border-left: 3px solid $green;
 
             .flat-list.buttons {
                 position: relative;
@@ -249,6 +235,10 @@ $comment-buttons-width: 600px;
                 height: 16px;
                 display: inline-block;
 
+                a {
+                    margin-right: 0;
+                }
+
                 span, .author, .usertext-edit {
                     // So it is clickable with the expand anchor filling entry
                     position: relative;
@@ -258,13 +248,7 @@ $comment-buttons-width: 600px;
                     padding: 1px 6px;
                     border-radius: 0px;
                     font-weight: 100;
-                    background: lighten($blue, 20%) !important;
-                    transition: background 0.15s;
                     color: white;
-
-                    &:hover {
-                        background: $blue !important;
-                    }
                 }
 
                 blockquote {
@@ -279,11 +263,15 @@ $comment-buttons-width: 600px;
                     font-weight: normal;
                 }
                 .submitter {
-                    color: #af882a;
+                    color: $orange;
                 }
 
                 time::after {
                     display: none;
+                }
+
+                .flairrichtext {
+                    vertical-align: unset;
                 }
             }
 
